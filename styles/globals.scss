@@ -1,0 +1,317 @@
+// -----------------------------------
+// Variables
+// -----------------------------------
+
+$star-active-color: black;
+$star-empty-color: #FCFBF8;
+$background-color: rgb(20, 24, 28);
+$text-color: rgb(214, 226, 235);
+
+// -----------------------------------
+// General
+// -----------------------------------
+
+body {
+  background-color: $background-color;
+  background-size: cover;
+  color: $text-color;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  overflow: hidden;
+}
+
+a {
+  color: $text-color;
+  cursor: pointer;
+}
+
+img, .logo {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+// -----------------------------------
+// Layout
+// -----------------------------------
+
+.main-content {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 70px 150px auto;
+  grid-template-areas:
+    "search-bar search-bar"
+    "title-director title-director"
+    "first-column second-column"
+  ;
+  justify-items: center;
+  column-gap: 30px;
+}
+
+
+.first-column {
+  grid-area: first-column;
+  justify-self: end;
+}
+
+.second-column {
+  grid-area: second-column;
+  justify-self: start;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+
+// -----------------------------------
+// Logo
+// -----------------------------------
+
+.logo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  opacity: 0.5;
+
+  img {
+    filter: invert(1);
+    height: 70px;
+    display: block;
+  }
+
+  &--text {
+    position: relative;
+    top: -5px;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    color: rgba(194, 177, 167, 1);
+  }
+}
+
+
+// -----------------------------------
+// Search bar
+// -----------------------------------
+
+.search-bar {
+  grid-area: search-bar;
+  align-self: center;
+
+  .MuiInputBase-input, .Mui-focused, .MuiAutocomplete-clearIndicator {
+    color: white !important;
+  }
+
+  .MuiOutlinedInput-root {
+    legend {
+      float: unset;
+      width: auto;
+      overflow: hidden;
+      display: block;
+      padding: 0px;
+      height: 11px;
+      font-size: 0.75em;
+      visibility: hidden;
+      max-width: 0.01px;
+      transition: max-width 50ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+      white-space: nowrap;
+    }
+  }
+
+  .MuiAutocomplete-hasClearIcon, .Mui-focused {
+    legend {
+      max-width: 100%;
+    }
+  }
+  
+  .MuiAutocomplete-popupIndicator {
+    display: none;
+  }
+}
+
+img.suggestion {
+  height: 70px;
+  width: 55px;
+  object-fit: cover;
+  vertical-align: middle;
+}
+// -----------------------------------
+// Film info
+// -----------------------------------
+
+.film {
+  display: flex;
+  flex-direction: row-reverse;
+  column-gap: 25px;
+
+  &-title-director {
+    grid-area: title-director;
+    justify-self: center;
+    text-align: center;
+    align-self: center;
+  }
+
+  &-title {
+    font-weight: 400;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    color: rgb(237, 237, 237);
+  }
+  
+  &-director {
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: rgb(222, 221, 221);
+  }
+  
+  &--ratings {
+    z-index: 2;
+    justify-self: start;
+
+    &--rating {
+      margin-bottom: 20px;
+    }
+
+    &--source {
+      margin-right: 15px;
+      vertical-align: middle;
+
+      &--logo {
+        padding: 5px;
+        margin: auto;
+        max-height: 40px;
+        width: 100px;
+      }
+    }
+    
+    .star-rating {
+      vertical-align: middle;
+    }
+  }
+
+  &--plot {
+    text-align: left;
+    color: rgb(190, 203, 213);
+    max-width: 325px;
+    justify-self: end;
+    align-self: end;
+  }
+
+  &--poster {
+    &--background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      filter: blur(100px);
+      // transform: scale(3);
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    &--img {
+      object-fit: cover;
+      width: 325px;
+      height: 483px;
+      border-radius: 10px;
+    }
+  }
+}
+
+div.star-container {
+  padding-left: 0 !important;
+  padding-right: 0px !important;
+}
+// -----------------------------------
+// Background image
+// -----------------------------------
+
+.bg-img {
+  position: absolute;
+  z-index: -1;
+  top: 0px;
+  height: 100%;
+  width: 50%;
+  left: 50%;
+  background: linear-gradient( rgba(20, 24, 28, 0.7), rgba(20, 24, 28, 0.95) ), url(../public/background/bg-img-17.jpeg) no-repeat; 
+  background-size: cover;
+  opacity: 0.5;
+
+  img {
+    filter: blur(10px);
+    z-index: -1;
+  }
+}
+
+// -----------------------------------
+// Fade effects
+// -----------------------------------
+
+@mixin faded($offset, $blur-radius, $spread-radius)
+{
+  &.faded-left:after {
+    box-shadow: inset $offset 0 $blur-radius (-$spread-radius);
+  }
+}
+
+$faded-offset: 40px !default;
+$faded-blur-radius: 40px !default;
+$faded-spread-radius: 16px !default;
+
+$faded-wide-offset: 200px !default;
+$faded-wide-blur-radius: 190px !default;
+$faded-wide-spread-radius: -20px !default;
+
+.faded {
+  color: $background-color;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+  }
+
+  @include faded($faded-offset, $faded-blur-radius, $faded-spread-radius);
+
+  &.faded-wide {
+    @include faded($faded-wide-offset, $faded-wide-blur-radius, $faded-wide-spread-radius);
+  }
+}
+
+.search-field {
+  & label {
+    color: #A0AAB4;
+  }
+  & .MuiInput-underline:after {
+    border-bottom-color: #B2BAC2;
+  }
+  & .MuiOutlinedInput-root {
+    & fieldset {
+      border-color: #E0E3E7;
+      color: #E0E3E7;
+    }
+    &:hover fieldset {
+      border-color: #B2BAC2;
+    }
+    &.Mui-focused fieldset {
+      border-color: #6F7E8C;
+    }
+  }
+}
+
+.loadingIcon {
+  height: 20px;
+}

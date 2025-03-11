@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Room Tone
+
+Room Tone is a Next.js application that retrieves ratings for a movie from several platforms including IMDb, Rotten Tomatoes, Metacritic, Letterboxd and Mubi. It provides a unified view of different ratings and helps users quickly compare scores across trusted sources.
+
+## Features
+
+- **Multi-Platform Ratings:** Retrieve and display movie ratings from multiple platforms.
+- **Dynamic API Calls:** Uses SWR-based data fetching to provide real-time ratings.
+- **Intuitive UI:** Displays ratings with corresponding logos and links to the source for more details.
+- **Easy Navigation:** Search and select movies to see detailed information and ratings.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Node.js](https://nodejs.org/) (v14 or higher)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### How to run
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+`npm run dev`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+or 
 
-## Learn More
+`yarn dev`
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+All rights reserved.
+You may use, modify, and share this software for personal or non-commercial purposes only.
+Commercial use of any part of this project is prohibited unless you obtain explicit permission from the author.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Disclaimer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Room Tone integrates data from external sources (e.g., APIs that may not be public or have usage policies). It is your responsibility to ensure compliance with any relevant terms.
+We disclaim any liability for misuse of the data or violation of any third-party policies. If you believe any policies are being violated, please open an issue or contact us.
