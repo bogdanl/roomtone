@@ -13,7 +13,7 @@ Movie addicts might know the hassle of having to look up a movie on various plat
 
 - **Multi-Platform Ratings:** Retrieve and display movie ratings from multiple platforms.
 - **Dynamic API Calls:** Uses SWR-based data fetching to provide real-time ratings.
-- **Easy UI:** Display movie details, ratings, and links to the various platforms for more details.
+- **Easy UI:** Display movie details, poster, ratings and links to the various platforms for more details.
 
 ## Getting Started
 
@@ -51,6 +51,6 @@ Commercial use of any part of this project is prohibited unless you obtain expli
 
 ## Disclaimer
 
-Room Tone integrates is a demonstrative experiment that pulls data from external sources and that includes APIs that may not be publicly-advertised or have usage policies in places. It is your responsibility to ensure compliance with any relevant terms.
+Room Tone is a demonstrative experiment that pulls data from external sources and that possibly queries APIs that may not be publicly-advertised or have usage policies in places. It is your responsibility to ensure compliance with any relevant terms.
 
 We disclaim any liability for misuse of the data or violation of any third-party policies. If you believe any policies are being violated, please open an issue or contact us.
